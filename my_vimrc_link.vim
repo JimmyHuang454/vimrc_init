@@ -33,7 +33,7 @@ silent! call plug#begin(g:plugin_dir)
     echo "Can't find/load myvimrc, Install it firstly.\n" . v:exception . '\n' . v:throwpoint
   endtry
 
-  Plug 'https://gitee.com/Jimmy_Huang/MyVimrc'
+  Plug 'JimmyHuang454/MyVimfiles'
 call plug#end()
 
 let s:startup_end     = reltimefloat(reltime())
