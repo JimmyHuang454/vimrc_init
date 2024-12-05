@@ -7,11 +7,11 @@ let s:current_file_dir = expand('<sfile>:p:h')
 let s:plug_path  = s:current_file_dir . '/plug.vim'
 exe 'so ' s:plug_path
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                    find and load plugin dir of plug.vim                    "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:plugin_dir = get(g:,'plugin_dir', s:current_file_dir . '/Plugins/')
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                               preload plugin                               "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 silent! call plug#begin(g:plugin_dir)
   Plug 'lifepillar/vim-solarized8'
 call plug#end()
@@ -22,6 +22,9 @@ catch
   echo "unknow color: " . g:using_color_scheme
 endtry
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                              load all plugin                               "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 silent! call plug#begin(g:plugin_dir)
 
   try
