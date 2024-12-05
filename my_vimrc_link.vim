@@ -25,9 +25,9 @@ endtry
 silent! call plug#begin(g:plugin_dir)
 
   try
-    let s:myvimrc_file_1 = g:plugin_dir . 'MyVimrc/plugin/my_vimrc.vim'
+    let s:myvimrc_file_1 = g:plugin_dir . 'MyVimfiles/plugin/my_vimrc.vim'
     exe 'so ' . s:myvimrc_file_1
-    let s:myvimrc_file_2 = g:plugin_dir . 'MyVimrc/autoload/main.vim'
+    let s:myvimrc_file_2 = g:plugin_dir . 'MyVimfiles/autoload/main.vim'
     exe 'so ' . s:myvimrc_file_2
   catch
     echo "Can't find/load myvimrc, Install it firstly.\n" . v:exception . '\n' . v:throwpoint
